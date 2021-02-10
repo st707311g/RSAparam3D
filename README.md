@@ -8,7 +8,7 @@ XXX
 
 First, clone RSAtrace3D repository if it is not already cloned:
 
-    $ git clone https://github.com/st707311g/RSAtrce3D.git
+    $ git clone https://github.com/st707311g/RSAtrace3D.git
 
 Second, clone RSAparam3D repository:
 
