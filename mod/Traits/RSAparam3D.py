@@ -261,10 +261,11 @@ class RSAparam3D_Root(object):
         i_polyline = root_node.interpolated_polyline()
         i_polyline = [Coordinate(x,y,z) for z,y,x in reversed(i_polyline)]
 
-        self.invalid = True if len(i_polyline)<10 else False
+        self.invalid = True if len(i_polyline)<16 else False
 
-        self.__vertical = RSAparam3D_Vertical(polyline=i_polyline)
-        self.__horizontal = RSAparam3D_Horizontal(polyline=i_polyline)
+        if not self.invalid:
+            self.__vertical = RSAparam3D_Vertical(polyline=i_polyline)
+            self.__horizontal = RSAparam3D_Horizontal(polyline=i_polyline)
 
     def theta_p(self):
         if self.invalid:
