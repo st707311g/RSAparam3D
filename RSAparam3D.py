@@ -9,7 +9,7 @@ from operator import add
 import math
 
 if __name__ == '__main__':
-    sys.path.append(os.path.join(os.path.dirname(__file__), '../../../RSAtrace3D'))
+    sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
 
 from mod.Traits.__backbone__ import RootTraitBackbone, RSATraitBackbone
 from mod.Traits.__test__ import ModuleTest

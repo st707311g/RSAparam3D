@@ -11,7 +11,7 @@ import sys
 from typing import List, Tuple, Union
 
 if __name__ == '__main__':
-    sys.path.append(os.path.join(os.path.dirname(__file__), '../../../RSAtrace3D'))
+    sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
     logging.basicConfig(level=logging.INFO)
 
 from PyQt5.QtWidgets import QCheckBox, QFileDialog, QHBoxLayout, QLabel, QLineEdit, QMainWindow, QPushButton, QVBoxLayout, QWidget

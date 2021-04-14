@@ -6,17 +6,28 @@ XXX
 
 ## Installation
 
-First, clone RSAtrace3D repository if it is not already cloned:
+### A Backbone Software RSAtrace3D
+
+Clone RSAtrace3D repository if it is not already cloned:
 
     $ git clone https://github.com/st707311g/RSAtrace3D.git
 
-Second, clone RSAparam3D repository:
+For detailed installation instructions, please refer to [here](https://github.com/st707311g/RSAtrace3D) and make sure you have installed it correctly.
+
+### RSAparam3D
+
+Move into the `mod` directory in the RSAtrace3D root directory.
+
+    $ cd RSAtrace3D/mod
+
+Clone RSAparam3D repository.
 
     $ git clone https://github.com/st707311g/RSAparam3D.git
 
-Then, run a setup program:
+Move back to the the RSAtrace3D root directory and run RSAtrace3D.
 
-    $ python RSAparam3D/setup.py --directory RSAtrace3D
+    $ cd .. 
+    $ python .
 
 ## Citation
 
