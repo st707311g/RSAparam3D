@@ -24,10 +24,19 @@ Clone RSAparam3D repository.
 
     $ git clone https://github.com/st707311g/RSAparam3D.git
 
-Move back to the the RSAtrace3D root directory and run RSAtrace3D.
+Move back to the the RSAtrace3D root directory.
 
     $ cd .. 
-    $ python .
+
+Make sure you have installed RSAparam3D correctly.
+
+    $ python list_modules.py | grep RSAparam3D
+    RootTraitBackbone, <class 'mod.RSAparam3D.RSAparam3D.Root_RSAparam3D'>
+    RSATraitBackbone, <class 'mod.RSAparam3D.RSAparam3D.RSA_RSAparam3D'>
+    ExtensionBackbone, <class 'mod.RSAparam3D.RSAparam3D_simulatior.ExtensionRSAparam3D'>
+
+You will find three modules, namely `Root_RSAparam3D`, `RSA_RSAparam3D`, and `ExtensionRSAparam3D`.
+
 
 ## Citation
 
