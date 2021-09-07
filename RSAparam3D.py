@@ -1,19 +1,22 @@
-import os, sys
-from dataclasses import dataclass, field
+import math
+import os
+import sys
 from copy import deepcopy
-from typing import List, Dict, Any
-import numpy as np
-from scipy import stats, optimize
+from dataclasses import dataclass, field
 from functools import reduce
 from operator import add
-import math
+from typing import Any, Dict, List
+
+import numpy as np
+from scipy import optimize, stats
 
 if __name__ == '__main__':
     sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
 
+from DATA import ID_Object, RSA_Vector
 from mod.Traits.__backbone__ import RootTraitBackbone, RSATraitBackbone
 from mod.Traits.__test__ import ModuleTest
-from DATA import RSA_Vector, ID_Object
+
 
 @dataclass(frozen=True)
 class Coordinate:
@@ -258,6 +261,8 @@ class RSAparam3D_Root(object):
 
     def __post_init__(self):
         root_node = self.RSA_vector.root_node(ID_string=self.ID_string)
+        assert root_node is not None
+
         i_polyline = root_node.interpolated_polyline()
         i_polyline = [Coordinate(x,y,z) for z,y,x in reversed(i_polyline)]
 
@@ -301,6 +306,9 @@ class Root_RSAparam3D(RootTraitBackbone):
             return None
 
         root_node = RSA_vector.root_node(ID_string=ID_string)
+        if root_node is None:
+            return None
+            
         if root_node.child_count() == 0:
             return None
         

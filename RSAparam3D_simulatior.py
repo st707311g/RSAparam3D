@@ -1,25 +1,29 @@
+import logging
+import operator
+import os
+import sys
 from copy import deepcopy
 from dataclasses import dataclass, field
 from itertools import accumulate
-import logging
-import numpy as np
-import operator
-import os
-import matplotlib.pyplot as plt
-from scipy import stats
-import sys
 from typing import List, Tuple, Union
+
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy import stats
 
 if __name__ == '__main__':
     sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
     logging.basicConfig(level=logging.INFO)
 
-from PyQt5.QtWidgets import QCheckBox, QFileDialog, QHBoxLayout, QLabel, QLineEdit, QMainWindow, QPushButton, QVBoxLayout, QWidget
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPalette, QDoubleValidator
-from mod.Extensions.__backbone__ import ExtensionBackbone
-from GUI import QtMain
 from DATA import RSA_Vector
+from GUI import QtMain
+from mod.Extensions.__backbone__ import ExtensionBackbone
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QDoubleValidator, QPalette
+from PyQt5.QtWidgets import (QCheckBox, QFileDialog, QHBoxLayout, QLabel,
+                             QLineEdit, QMainWindow, QPushButton, QVBoxLayout,
+                             QWidget)
+
 
 @dataclass(frozen=True)
 class Coordinate:
@@ -206,11 +210,13 @@ class RSAparam3D_RSA(object):
             polyline = [[int(z),int(x+base_loc.x),int(y+base_loc.y)] for x,y,z in zip(root.vector.x(), root.vector.y(), root.vector.z())][::-1]
             annotations={'polyline': polyline}
             base_node = rinfo.base_node(ID_string=base_ID_string)
-            root_ID_string = base_node.append(annotations=annotations)
-            root_node = rinfo.root_node(ID_string=root_ID_string)
-            annotations={'coordinate': polyline[0]}
+            if base_node is not None:
+                root_ID_string = base_node.append(annotations=annotations)
+                root_node = rinfo.root_node(ID_string=root_ID_string)
+                annotations={'coordinate': polyline[0]}
 
-            root_node.append(annotations=annotations, interpolation=False)
+                if root_node is not None:
+                    root_node.append(annotations=annotations, interpolation=False)
 
         return rinfo
 
