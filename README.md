@@ -65,7 +65,7 @@ RSA vector data can be saved by pressing the `Save as .rinfo` button.
 
 ## Citation
 
-We are currently submitting a paper on this software. You are free to use it according to the license, but if you are submitting an academic paper using this software, please cite it after the paper has been accepted and published, if possible.
+We are currently submitting a paper on this software. You are free to use this software according to the license, but do not publish the results of using this software before our submitting paper has been accepted and published. 
 
 ## Licence
 
